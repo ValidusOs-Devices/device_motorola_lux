@@ -32,6 +32,17 @@
     <!-- Default LED off time for notification LED in milliseconds. -->
     <integer name="config_defaultNotificationLedOff">2000</integer>
 
+    <!-- Default color for notification LED is white. -->
+    <color name="config_defaultNotificationColor">#ffffffff</color>
+
+    <!-- Does the notification LED support multiple colors?
+         Used to decide if the user can change the colors -->
+    <bool name="config_multiColorNotificationLed">true</bool>
+
+    <!-- Does the battery LED support multiple colors?
+         Used to decide if the user can change the colors -->
+    <bool name="config_multiColorBatteryLed">true</bool>    
+
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
