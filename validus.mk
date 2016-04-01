@@ -15,7 +15,7 @@
 $(call inherit-product, device/motorola/lux/full_lux.mk)
 
 # Enhanced NFC
-$(call inherit-product, vendor/tesla/config/nfc_enhanced.mk)
+$(call inherit-product, vendor/validus/config/nfc_enhanced.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
@@ -23,7 +23,7 @@ TARGET_SCREEN_HEIGHT := 1920
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := lux
-PRODUCT_NAME := tesla_lux
+PRODUCT_NAME := validus_lux
 PRODUCT_BRAND := Motorola
 PRODUCT_MANUFACTURER := Motorola
 PRODUCT_RELEASE_NAME := lux

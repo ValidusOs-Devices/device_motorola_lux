@@ -29,17 +29,11 @@ TARGET_LIBINIT_DEFINES_FILE := $(DEVICE_PATH)/init/init_lux.cpp
 TARGET_KERNEL_CONFIG := lux_defconfig
 
 # Kernel Toolchain
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.9/bin
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.9-uber/bin
 KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
 
 # Rom Toolchain
-TARGET_GCC_VERSION_EXP := 4.9
-
-# Optimizations
-STRICT_ALIASING := false
-CLANG_O3 := true
-ENABLE_GCCONLY := true
-GRAPHITE_OPTS := false
+TARGET_GCC_VERSION_EXP := 4.9-uber
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432	# 32768 * 1024 mmcblk0p31
