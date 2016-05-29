@@ -67,9 +67,9 @@
   },
   {
     "remote": "github",
-    "repository": "Cyanogenmod/android_packages_apps_Snap",
+    "repository": "ValidusOs-M/packages_apps_snap",
     "target_path": "packages/apps/Snap",
-    "branch": "cm-13.0"
+    "branch": "mm6.0"
   }
 ]
 
