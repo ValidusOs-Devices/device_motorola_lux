@@ -16,3 +16,7 @@ MicroSD | Up to 128 GB
 Battery | Li-Ion 3630mAh battery
 Display | 1080 x 1920 pixels, 5.5 inches (~403 ppi pixel density)
 Camera  | 21 MP, 5344 x 4008 pixels, autofocus, LED flash
+
+Copyright 2015 - The CyanogenMod Project.
+
+![Moto X Play](https://wiki.cyanogenmod.org/images/thumb/d/db/Lux.png/309px-Lux.png "Moto X Play")
