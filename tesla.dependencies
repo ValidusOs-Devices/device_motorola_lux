@@ -31,43 +31,13 @@
   },
   {
     "remote": "github",
-    "repository": "Cyanogenmod/android_device_qcom_common",
-    "target_path": "device/qcom/common",
-    "branch": "cm-13.0"
-  },
-    {
-    "remote": "github",
-    "repository": "Cyanogenmod/android_device_qcom_common",
-    "target_path": "device/qcom/common",
-    "branch": "cm-13.0"
-  },
-    {
-    "remote": "github",
-    "repository": "Cyanogenmod/android_hardware_qcom_audio",
-    "target_path": "hardware/qcom/audio-caf/msm8916",
-    "branch": "cm-13.0-caf-8916"
-  },
-    {
-    "remote": "github",
-    "repository": "Cyanogenmod/android_hardware_qcom_display",
-    "target_path": "hardware/qcom/display-caf/msm8916",
-    "branch": "cm-13.0-caf-8916"
-  },
-  {
-    "remote": "github",
-    "repository": "Cyanogenmod/android_hardware_qcom_media",
-    "target_path": "hardware/qcom/media-caf/msm8916",
-    "branch": "cm-13.0-caf-8916"
-  },
-  {
-    "remote": "github",
     "repository": "Cyanogenmod/android_vendor_qcom_opensource_dataservices",
     "target_path": "vendor/qcom/opensource/dataservices",
     "branch": "cm-13.0"
   },
   {
     "remote": "github",
-    "repository": "ValidusOs-M/packages_apps_snap",
+    "repository": "Cyanogenmod/android_packages_apps_Snap",
     "target_path": "packages/apps/Snap",
     "branch": "mm6.0"
   }
