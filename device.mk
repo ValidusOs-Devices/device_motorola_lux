@@ -41,6 +41,10 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/keymaster/keymaster.b03:$(TARGET_OUT_VENDOR)/firmware/keymaster/keymaster.b03 \
      $(LOCAL_PATH)/keymaster/keymaster.mdt:$(TARGET_OUT_VENDOR)/firmware/keymaster/keymaster.mdt \
 
+# Firmware Extraction
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/extract_firmware.sh:install/bin/extract_firmware.sh
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
