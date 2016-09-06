@@ -12,15 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-def IncrementalOTA_VerifyBegin(info):
-  # Workaround for apn list changes
-  RestoreApnList(info)
-
-def IncrementalOTA_InstallEnd(info):
-  ReplaceApnList(info)
-
 def FullOTA_InstallEnd(info):
-  ReplaceApnList(info)
   ExtractFirmwares(info)
 
 def ExtractFirmwares(info):
@@ -31,21 +23,3 @@ def ExtractFirmwares(info):
   info.script.AppendExtra('ui_print("Firmware extracted");')
   info.script.Unmount("/firmware")
   info.script.Unmount("/system")
-
-def ReplaceApnList(info):
-  info.script.AppendExtra('if getprop("ro.boot.hardware.sku") == "XT1548" then')
-  info.script.Mount("/system")
-  info.script.AppendExtra('run_program("/sbin/sh", "-c", "mv /system/etc/apns-conf.xml /system/etc/apns-conf.xml.bak");')
-  info.script.AppendExtra('ifelse(getprop("ro.boot.carrier") == "sprint", ' +
-                          'run_program("/sbin/sh", "-c", "mv /system/etc/apns-conf-vmob.xml /system/etc/apns-conf.xml"), ' +
-                          'run_program("/sbin/sh", "-c", "mv /system/etc/apns-conf-usc.xml /system/etc/apns-conf.xml"));')
-  info.script.Unmount("/system")
-  info.script.AppendExtra('endif;')
-
-def RestoreApnList(info):
-  info.script.AppendExtra('if getprop("ro.boot.hardware.sku") == "XT1548" then')
-  info.script.Mount("/system")
-  info.script.AppendExtra('delete("/system/etc/apns-conf.xml");')
-  info.script.AppendExtra('run_program("/sbin/sh", "-c", "mv /system/etc/apns-conf.xml.bak /system/etc/apns-conf.xml");')
-  info.script.Unmount("/system")
-  info.script.AppendExtra('endif;')
