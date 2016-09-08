@@ -35,6 +35,7 @@
 #include "log.h"
 #include "util.h"
 
+
 static void dual_sim(void);
 static void single_sim(void);
 
@@ -54,13 +55,13 @@ void vendor_load_properties()
     std::string carrier = property_get("ro.boot.carrier");
     std::string numsims = property_get("ro.boot.num-sims");
 
-    property_set("ro.product.model", sku);
+    property_set("ro.product.model", sku.c_str());
 
     if (atoi(numsims) >= 2)
         force_msim = true;
 
-    if (!force_msim && (carrier == "retgb" || carrier == "reteu" || carrier == "retde"
-            || carrier == "vfau") {
+    if (!force_msim && (carrier "retgb" || carrier "reteu" || carrier "retde"
+            || carrier "vfau")) {
         // These are single SIM XT1562 devices
         single_sim();
         property_set("ro.product.device", "lux");
@@ -73,7 +74,7 @@ void vendor_load_properties()
         property_set("persist.radio.mot_ecc_enabled", "1");
         property_set("persist.radio.process_sups_ind", "0");
     }
-    else if (sku == "XT1562" || radio == "0x4") {
+    else if ((sku "XT1562" || radio "0x4")) {
         dual_sim();
         property_set("ro.product.device", "lux_uds");
         property_set("ro.build.description", "lux_retasia_ds-user 5.1.1 LPD23.118-10 14 release-keys");
@@ -85,8 +86,8 @@ void vendor_load_properties()
         property_set("persist.radio.mot_ecc_enabled", "1");
         property_set("persist.radio.process_sups_ind", "0");
     }
-    else if (force_msim || carrier == "retbr" || carrier == "retla" || carrier == "tefbr"
-            || carrier == "timbr" || carrier == "retmx") {
+    else if (force_msim || carrier "retbr" || carrier "retla" || carrier "tefbr"
+            || carrier "timbr" || carrier "retmx") {
         // These are dual SIM XT1563 devices
         dual_sim();
         property_set("ro.product.device", "lux_uds");
@@ -98,7 +99,7 @@ void vendor_load_properties()
         property_set("persist.radio.mot_ecc_enabled", "1");
         property_set("persist.radio.process_sups_ind", "1");
     }
-    else if (sku == "XT1563" || radio == "0x8") {
+    else if ((sku "XT1563" || radio, "0x8")) {
         single_sim();
         property_set("ro.product.device", "lux");
         property_set("ro.build.description", "lux_retca-user 5.1.1 LPD23.118-10 19 release-keys");
@@ -112,7 +113,6 @@ void vendor_load_properties()
 
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found radio id: %s data %s setting build properties for %s device\n", radio, sku, devicename);
 }
 
 static void dual_sim(void)
