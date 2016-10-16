@@ -3,43 +3,25 @@
     "remote": "github",
     "repository":  "Tesla-M-Devices/device_motorola_msm8916-common",
     "target_path": "device/motorola/msm8916-common",
-    "branch": "tesla-6.0"
+    "branch": "test"
   },
   {
     "remote": "github",
-    "repository":  "Cyanogenmod/android_kernel_motorola_msm8916",
+    "repository":  "Alberto97/android_kernel_motorola_msm8916",
     "target_path": "kernel/motorola/msm8916",
-    "branch": "cm-13.0"
+    "branch": "cm-14.0"
   },
   {
     "remote": "github",
-    "repository": "TheMuppets/proprietary_vendor_motorola",
+    "repository": "Alberto97/proprietary_vendor_motorola",
     "target_path": "vendor/motorola",
-    "branch": "cm-13.0"
+    "branch": "cm-14.0"
   },
   {
     "remote": "github",
     "repository": "Cyanogenmod/android_external_bson",
     "target_path": "external/bson",
     "branch": "cm-13.0"
-  },
-  {
-    "remote": "github",
-    "repository": "Cyanogenmod/android_external_stlport",
-    "target_path": "external/stlport",
-    "branch": "cm-13.0"
-  },
-  {
-    "remote": "github",
-    "repository": "Cyanogenmod/android_vendor_qcom_opensource_dataservices",
-    "target_path": "vendor/qcom/opensource/dataservices",
-    "branch": "cm-13.0"
-  },
-  {
-    "remote": "github",
-    "repository": "Cyanogenmod/android_packages_apps_Snap",
-    "target_path": "packages/apps/Snap",
-    "branch": "mm6.0"
   }
 ]
 
