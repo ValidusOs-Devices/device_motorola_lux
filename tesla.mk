@@ -13,6 +13,7 @@
 # limitations under the License.
 
 $(call inherit-product, device/motorola/lux/full_lux.mk)
+$(call inherit-product, vendor/tesla/config/caf_fw.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/tesla/config/nfc_enhanced.mk)
