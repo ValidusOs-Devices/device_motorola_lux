@@ -15,9 +15,6 @@
 $(call inherit-product, device/motorola/lux/full_lux.mk)
 $(call inherit-product, vendor/tesla/config/caf_fw.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/tesla/config/nfc_enhanced.mk)
-
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
