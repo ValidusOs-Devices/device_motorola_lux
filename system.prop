@@ -10,3 +10,6 @@ ro.product.device=lux
 
 # Display
 ro.sf.lcd_density=480
+
+# Google assistant
+ro.opa.eligible_device=true
