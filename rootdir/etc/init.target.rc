@@ -42,23 +42,14 @@ on boot
     chown system compass /sys/class/compass/akm09912/enable_mag
     chmod 0660 /sys/class/compass/akm09912/enable_mag
 
-    # Switch to interactive and let PowerHAL configure it
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-    chmod 0644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
-
-    # little cluster will be hotplugged, but not governed by power HAL
+    # little cluster will be hotplugged
     chown system system /sys/module/cluster_plug/parameters/low_power_mode
     chmod 0644 /sys/module/cluster_plug/parameters/low_power_mode
+    write /sys/module/cluster_plug/parameters/low_power_mode 0
 
     chown system system /sys/module/cpu_boost/parameters/input_boost_freq
     chmod 0644 /sys/module/cpu_boost/parameters/input_boost_freq
+    write /sys/module/cpu_boost/parameters/input_boost_freq 960000
 
 on post-fs-data
     # AK09912 calibration file directory
@@ -120,8 +111,11 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay "20000 1113600:50000"
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 75
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1113600
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "60 800000:70 1113600:80 1344000:85"
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 50000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 533333
 
