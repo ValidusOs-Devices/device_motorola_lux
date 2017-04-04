@@ -1,7 +1,7 @@
 [
   {
     "remote": "github",
-    "repository":  "ValidusOs-Devices/android_device_motorola_msm8916-common",
+    "repository":  "ValidusOs-Devices/device_motorola_msm8916-common",
     "target_path": "device/motorola/msm8916-common",
     "branch": "n7.1"
   },
